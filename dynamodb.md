@@ -49,11 +49,11 @@ Selecione **AWS Core Management Tools** e dê next
 
 Adicionar o caminho do aws.exe nas variaveis de ambiente Path
 
-*No meu caso o caminho foi: C:\Program Files\Amazon\AWSCLI\aws.exe
+*No meu caso o caminho foi: C:\Program Files\Amazon\AWSCLI\aws.exe*
 
-*aws --version* mostra se foi instalado e a versão
+**aws --version** mostra se foi instalado e a versão
 
-*aws configure* para adicionar as configurações de credenciais
+**aws configure** para adicionar as configurações de credenciais
 
 Adicione seu ID, sua chave, região e tipo de saída
 
@@ -70,7 +70,7 @@ Exemplo:
 
 [Usar o Amazon DynamoDB com a AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-services-dynamodb.html)
 
-*Retirar a '\' e deixar os comandos na mesma linha
+*Retirar a \ e deixar os comandos na mesma linha*
 
 Exemplo:
 
