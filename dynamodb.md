@@ -89,7 +89,7 @@ Caso não tenha, adicione no Pom.xml a dependência:
 		<version>1.11.438</version>
 	</dependency>
 	
-## Criando classe de configuração 
+### Criando classe de configuração 
 
 Para utilização local: 
 
@@ -124,3 +124,28 @@ Código para configuração do proxy:
 			return cli_config;
 	}
 
+### Criando uma tabela
+
+Crie uma classe extendendo a classe de configuração
+
+	public class CriarTabela extends DynamoConfig
+	
+Código para criação:
+
+	String tableName = "Clientes2"; //nome para a tabela
+
+        try{
+            System.out.println("Tentando criar a tabela ...");
+            Table table = dynamoDB.createTable(tableName, // puxa nome da tabela
+                    Arrays.asList(new KeySchemaElement("id", KeyType.HASH), //criação de chave de partição
+                            new KeySchemaElement("nome", KeyType.RANGE)), // criação de chave de classificação
+                    Arrays.asList(new AttributeDefinition("id", ScalarAttributeType.N), // criação atributos(campos)
+                            new AttributeDefinition("nome", ScalarAttributeType.S)),
+                    new ProvisionedThroughput(10L,10L));
+            table.waitForActive();
+            System.out.println("Tabela criada com sucesso");
+
+        } catch (Exception e){ //caso haja erro ao criar a tabela
+            System.err.println("Erro ao criar a tabela");
+            System.err.println(e.getMessage()); // resposta do erro
+        }
