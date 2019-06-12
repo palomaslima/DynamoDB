@@ -1,79 +1,91 @@
 
-#DynamoDB
+# DynamoDB
 
 [Getting Started DynamoDB](https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/GettingStarted.Java.html)
 
-###Download DynamoDB Local
+### Download DynamoDB Local
 
 [Download DynamoDB local](https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
 
-- Para rodar o Dynamo no local entre pelo terminal na pasta do seu download e rode o comando
-´´´
-java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
-´´´
+Para rodar o Dynamo no local entre pelo terminal na pasta do seu download e rode o comando
 
-- Caso esteja utiliando o PowerShell:
+	java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
 
-´´´
-java -D"java.library.path=./DynamoDBLocal_lib" -jar DynamoDBLocal.jar
-´´´ 
+Caso esteja utiliando o PowerShell:
 
-###Criando Credenciais
-- Entre no [painel IAM do AWS](https://console.aws.amazon.com/iam/home#/home)
-- Entre em Usuários
-- Adicionar Usuario
-- Crie um nome de Usuario e marque a opção de **Tipo de Usuario**: Acesso Programático
-- Na próxima tela clique em **Anexar políticas existentes de forma direta**
-- Selecione a opção **Administrator Acess**
-- De próximo e depois revisar
-- Salve o ID e a Chave de Acesso
+	java -D"java.library.path=./DynamoDBLocal_lib" -jar DynamoDBLocal.jar
 
-###Baixar AWS Toolkit for Eclipse
-- Abra o Eclipse, entre em Help → Install New Software
-- Clique em 'Add...'
-- Adicione o nome e o link: https://aws.amazon.com/eclipse 
-- Selecione **AWS Core Management Tools** e dê next
 
-###Baixar AWS Cli
+### Criando Credenciais
+Entre no [painel IAM do AWS](https://console.aws.amazon.com/iam/home#/home)
+
+Entre em Usuários
+
+Adicionar Usuario
+
+Crie um nome de Usuario e marque a opção de **Tipo de Usuario**: Acesso Programático
+
+Na próxima tela clique em **Anexar políticas existentes de forma direta**
+
+Selecione a opção **Administrator Acess**
+
+De próximo e depois revisar
+
+Salve o ID e a Chave de Acesso
+
+### Baixar AWS Toolkit for Eclipse
+
+Abra o Eclipse, entre em Help → Install New Software
+
+Clique em 'Add...'
+
+Adicione o nome e o link: https://aws.amazon.com/eclipse 
+
+Selecione **AWS Core Management Tools** e dê next
+
+### Baixar AWS Cli
+
 [Download AWS Cli](https://aws.amazon.com/pt/cli/)
 
-- Adicionar o caminho do aws.exe nas variaveis de ambiente Path
+Adicionar o caminho do aws.exe nas variaveis de ambiente Path
+
 *No meu caso o caminho foi: C:\Program Files\Amazon\AWSCLI\aws.exe
 
-- *aws --version* mostra se foi instalado e a versão
-- *aws configure* para adicionar as configurações de credenciais
-- Adicione seu ID, sua chave, região e tipo de saída
-- Exemplo:
+*aws --version* mostra se foi instalado e a versão
 
-´´´
-$ aws configure
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-east-2
-Default output format [None]: json
-´´´
+*aws configure* para adicionar as configurações de credenciais
 
-###Comandos AWS Cli
+Adicione seu ID, sua chave, região e tipo de saída
+
+Exemplo:
+
+	$ aws configure
+	AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+	AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+	Default region name [None]: us-east-2
+	Default output format [None]: json
+
+
+### Comandos AWS Cli
+
 [Usar o Amazon DynamoDB com a AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-services-dynamodb.html)
 
-- *Retirar a '\' e deixar os comandos na mesma linha
-- Exemplo:
+*Retirar a '\' e deixar os comandos na mesma linha
 
-´´´
-aws dynamodb create-table --table-name MusicCollection --attribute-definitions AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
+Exemplo:
 
-´´´
-
-##Criando Projeto Java com DynamoDB
-- Eclipe → New ... → Other ... → AWS → AWS Java Project 
-- Caso não tenha, adicione no Pom.xml a dependência:
+	aws dynamodb create-table --table-name MusicCollection --attribute-definitions AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
 
 
-´´´
-<dependency>
-    <groupId>com.amazonaws</groupId>
-    <artifactId>aws-java-sdk-dynamodb</artifactId>
-    <version>1.11.438</version>
-</dependency>
-´´´
+## Criando Projeto Java com DynamoDB
+
+Eclipe → New ... → Other ... → AWS → AWS Java Project 
+
+Caso não tenha, adicione no Pom.xml a dependência:
+
+	<dependency>
+		<groupId>com.amazonaws</groupId>
+		<artifactId>aws-java-sdk-dynamodb</artifactId>
+		<version>1.11.438</version>
+	</dependency>
 
