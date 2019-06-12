@@ -88,4 +88,39 @@ Caso não tenha, adicione no Pom.xml a dependência:
 		<artifactId>aws-java-sdk-dynamodb</artifactId>
 		<version>1.11.438</version>
 	</dependency>
+	
+## Criando classe de configuração 
+
+Para utilização local: 
+
+	static AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
+		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
+		.build();
+
+	static DynamoDB dynamoDB = new DynamoDB(client);
+	
+Para utilizar com o web:
+
+	static BasicAWSCredentials awsCreds = new BasicAWSCredentials("Key Id", "Secret Key"); //seta credenciais aws
+		static AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
+			.withCredentials(new AWSStaticCredentialsProvider(awsCreds)) //puxa credenciais
+			.withRegion(Regions.SA_EAST_1) //seta a regiao
+			.withClientConfiguration(clientConfig()) //puxa configuração de proxy
+			.build();
+	
+	static DynamoDB dynamoDB = new DynamoDB(client);
+	
+Código para configuração do proxy:
+
+	static public ClientConfiguration clientConfig(){
+
+			// Variável com as configurações do cliente
+			ClientConfiguration cli_config = new ClientConfiguration();
+
+			// Setando configurações de proxy
+			cli_config.setProxyHost("proxylatam.indra.es");
+			cli_config.setProxyPort(8080);
+
+			return cli_config;
+	}
 
