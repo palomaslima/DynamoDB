@@ -14,6 +14,8 @@ Para rodar o Dynamo no local entre pelo terminal na pasta do seu download e rode
 Caso esteja utiliando o PowerShell:
 
 	java -D"java.library.path=./DynamoDBLocal_lib" -jar DynamoDBLocal.jar
+	
+Mantenha o dynamo rodando para criação de tabelas, itens no local
 
 
 ### Criando Credenciais
