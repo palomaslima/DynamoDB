@@ -124,7 +124,7 @@ Código para configuração do proxy:
 			return cli_config;
 	}
 
-### Criando uma tabela
+### Criando classe para criar uma tabela
 
 Crie uma classe extendendo a classe de configuração
 
@@ -132,7 +132,7 @@ Crie uma classe extendendo a classe de configuração
 	
 Código para criação:
 
-	String tableName = "Clientes2"; //nome para a tabela
+	String tableName = "Clientes"; //nome para a tabela
 
         try{
             System.out.println("Tentando criar a tabela ...");
@@ -149,3 +149,24 @@ Código para criação:
             System.err.println("Erro ao criar a tabela");
             System.err.println(e.getMessage()); // resposta do erro
         }
+		
+		
+### Criando classe para adicionar item
+
+Crie uma classe extendendo a classe de configuração
+
+	public class AdicionarItem extends DynamoConfig
+	
+Código para adicionar item:
+
+	Table table = dynamoDB.getTable("Clientes"); //puxa nome da tabela que será utilizada
+
+			try{
+				System.out.println("Adicionando um novo item ...");
+				PutItemOutcome outcome = table.putItem(new Item().withPrimaryKey("id", 600, "nome", "Dani"));
+				// primeiro campo puxa o nome do campo, o segundo adiciona o valor
+				System.out.println("Item adicionado com sucesso \n" + outcome.getPutItemResult());
+			} catch (Exception e){ //caso dê erro ao adicionar o item
+				System.err.println("Erro ao adicionar item");
+				System.err.println(e.getMessage()); //traz a resposta do erro
+			}
