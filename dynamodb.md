@@ -72,13 +72,22 @@ Exemplo:
 
 [Usar o Amazon DynamoDB com a AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-services-dynamodb.html)
 
-*Retirar a \ e deixar os comandos na mesma linha*
+Alguns terminais não aceitam a \ para pular linha, então ou deixe tudo na mesma linha ou veja qual o simbolo para pular linha do seu teminal
 
-Exemplo:
+Exemplo do cmd que não aceita a \:
 
 	aws dynamodb create-table --table-name MusicCollection --attribute-definitions AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
 
+Para criar as tabelas/itens ... no local utilize o comando **--endpoint-url http://localhost:8000** no final de outros comandos
 
+Exemplo:
+
+	aws dynamodb create-table --table-name MusicCollection --attribute-definitions AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 --endpoint-url http://localhost:8000
+	
+Para mais comandos do dynamodb digite **aws dynamodb help** 
+
+Link para comandos do aws dynamodb: https://docs.aws.amazon.com/cli/latest/reference/dynamodb/index.html
+	
 ## Criando Projeto Java com DynamoDB
 
 Eclipe → New ... → Other ... → AWS → AWS Java Project 

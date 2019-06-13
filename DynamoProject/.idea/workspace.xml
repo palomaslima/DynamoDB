@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="202eaac3-70ba-420d-bf95-136a0e291708" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/DynamoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/DynamoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirTabela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirTabela.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dynamodb.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dynamodb.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/CriarTabela.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="101">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/DynamoConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="294">
+              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirTabela.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+              <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -156,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/MoviesScan.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/MoviesQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/MoviesCreateTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/CriarTabela.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/AdicionarItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/AtualizarItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/AtualizarItemCondicao.java" />
@@ -166,8 +165,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/LerItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/CarregarItensPorJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ConsultarTabela.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirTabela.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/DynamoConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/CriarTabela.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirTabela.java" />
       </list>
     </option>
   </component>
@@ -357,8 +357,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ExcluirTabela" />
-        <item itemvalue="Application.CarregarItensPorJson" />
         <item itemvalue="Application.CriarTabela" />
+        <item itemvalue="Application.CarregarItensPorJson" />
         <item itemvalue="Application.ConsultarTabela" />
         <item itemvalue="Application.AumentarContador" />
       </list>
@@ -379,9 +379,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2624811" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2624811" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -390,7 +389,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35188216" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35188216" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -448,16 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/CarregarItensPorJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -508,10 +497,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/DynamoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/CriarTabela.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -521,17 +530,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ExcluirTabela.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/amazonaws/samples/DynamoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
         </state>
       </provider>
     </entry>

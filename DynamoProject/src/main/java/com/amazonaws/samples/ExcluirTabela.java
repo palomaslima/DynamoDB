@@ -5,7 +5,7 @@ import com.amazonaws.services.dynamodbv2.document.Table;
 public class ExcluirTabela extends DynamoConfig {
     public static void main(String[] args) {
 
-        Table table = dynamoDB.getTable("Movies");
+        Table table = dynamoDB.getTable("MusicCollection");
 
         try {
             System.out.println("Excluindo tabela...");
