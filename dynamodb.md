@@ -124,49 +124,10 @@ Código para configuração do proxy:
 			return cli_config;
 	}
 
-### Criando classe para criar uma tabela
+*As próximas classes deverão ser criados extendendo a classe de configuração**
 
-Crie uma classe extendendo a classe de configuração
+## Criando classes do projeto
 
-	public class CriarTabela extends DynamoConfig
-	
-Código para criação:
+Link para o repositório com as classes: https://github.com/palomaslima/DynamoDB/tree/master/DynamoProject
 
-	String tableName = "Clientes"; //nome para a tabela
-
-        try{
-            System.out.println("Tentando criar a tabela ...");
-            Table table = dynamoDB.createTable(tableName, // puxa nome da tabela
-                    Arrays.asList(new KeySchemaElement("id", KeyType.HASH), //criação de chave de partição
-                            new KeySchemaElement("nome", KeyType.RANGE)), // criação de chave de classificação
-                    Arrays.asList(new AttributeDefinition("id", ScalarAttributeType.N), // criação atributos(campos)
-                            new AttributeDefinition("nome", ScalarAttributeType.S)),
-                    new ProvisionedThroughput(10L,10L));
-            table.waitForActive();
-            System.out.println("Tabela criada com sucesso");
-
-        } catch (Exception e){ //caso haja erro ao criar a tabela
-            System.err.println("Erro ao criar a tabela");
-            System.err.println(e.getMessage()); // resposta do erro
-        }
-		
-		
-### Criando classe para adicionar item
-
-Crie uma classe extendendo a classe de configuração
-
-	public class AdicionarItem extends DynamoConfig
-	
-Código para adicionar item:
-
-	Table table = dynamoDB.getTable("Clientes"); //puxa nome da tabela que será utilizada
-
-			try{
-				System.out.println("Adicionando um novo item ...");
-				PutItemOutcome outcome = table.putItem(new Item().withPrimaryKey("id", 600, "nome", "Dani"));
-				// primeiro campo puxa o nome do campo, o segundo adiciona o valor
-				System.out.println("Item adicionado com sucesso \n" + outcome.getPutItemResult());
-			} catch (Exception e){ //caso dê erro ao adicionar o item
-				System.err.println("Erro ao adicionar item");
-				System.err.println(e.getMessage()); //traz a resposta do erro
-			}
+Link para o arquivo JSON para carregar itens: https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/samples/moviedata.zip
